@@ -3,10 +3,10 @@
         private $conn;
         private $table = 'Matches';
 
-        public $MatchId;
-        public $MatchName;
-        public $MatchDate;
-        public $Status;
+        public $matchid;
+        public $matchname;
+        public $matchdate;
+        public $status;
 
         public function __construct($db){
             $this->conn = $db;
@@ -14,7 +14,7 @@
 
         //Get Bet options ie matches to bet on
         public function view(){
-            $query = 'SELECT MatchName, MatchDate, Status FROM' . $this->table . 
+            $query = 'SELECT MatchID, MatchName, MatchDate, Status FROM' . $this->table . 
             'ORDER BY MatchDate DESC';
 
             $stmt = $this->conn->prepare($query);
