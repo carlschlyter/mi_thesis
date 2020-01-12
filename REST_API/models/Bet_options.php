@@ -14,8 +14,7 @@
 
         //Get Bet options ie matches to bet on
         public function view(){
-            $query = 'SELECT MatchID, MatchName, MatchDate, Status FROM' . $this->table . 
-            'ORDER BY MatchDate DESC';
+            $query = 'SELECT MatchName FROM' . $this->table;
 
             $stmt = $this->conn->prepare($query);
 

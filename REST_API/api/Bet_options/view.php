@@ -1,3 +1,5 @@
+Hej jag funkar inte
+
 <?php
 header('Access-Control-Allow-Origin: *');
 header('Content-Type: application/json');
@@ -22,16 +24,16 @@ if($num > 0) {
         extract($row);
 
         $betOption_item = array(
-            'MatchID' => $matchid,
+            // 'MatchID' => $matchid,
             'MatchName' => $matchname,
-            'MatchDate' => $matchdate,
-            'Status' => $status
+            // 'MatchDate' => $matchdate,
+            // 'Status' => $status
         );
 
         array_push($betOptions_arr['data'], $betOption_item);
     }
 
-    //Turn JSON and ouput
+    //Turn to JSON and ouput
     echo json_encode($betOptions_arr);
 
 } else {
