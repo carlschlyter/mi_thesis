@@ -10,7 +10,7 @@ include_once '../../models/Bet_options.php';
 $database = new Database();
 $db = $database->connect();
 
-$betOptions = new Bet_options($db);
+$betOptions = new BetOptions($db);
 
 $matches = $betOptions->view();
 
@@ -24,10 +24,10 @@ if($num > 0) {
         extract($row);
 
         $betOption_item = array(
-            // 'MatchID' => $matchid,
+            'MatchID' => $matchid,
             'MatchName' => $matchname,
-            // 'MatchDate' => $matchdate,
-            // 'Status' => $status
+            'MatchDate' => $matchdate,
+            'Status' => $status
         );
 
         array_push($betOptions_arr['data'], $betOption_item);

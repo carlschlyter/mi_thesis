@@ -1,5 +1,5 @@
 <?php
-    class Bet_options{
+    class BetOptions{
         private $conn;
         private $table = 'Matches';
 
@@ -14,7 +14,7 @@
 
         //Get Bet options ie matches to bet on
         public function view(){
-            $query = 'SELECT MatchName FROM' . $this->table;
+            $query = 'SELECT MatchID, MatchName, MatchDate, Status FROM' . $this->table;
 
             $stmt = $this->conn->prepare($query);
 
