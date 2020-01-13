@@ -1,11 +1,11 @@
-Hej jag funkar inte
+Hej jag funkar inte ännu
 
 <?php
 header('Access-Control-Allow-Origin: *');
 header('Content-Type: application/json');
 
 include_once '../../config/Database.php';
-include_once '../../models/Bet_options.php';
+include_once '../../models/BetOptions.php';
 
 $database = new Database();
 $db = $database->connect();
@@ -31,6 +31,7 @@ if($num > 0) {
         );
 
         array_push($betOptions_arr['data'], $betOption_item);
+        
     }
 
     //Turn to JSON and ouput
@@ -43,3 +44,5 @@ if($num > 0) {
         array('message' => 'No Bet Options right now')
     );
 }
+
+?>
