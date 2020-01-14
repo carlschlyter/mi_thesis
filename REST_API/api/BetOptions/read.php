@@ -1,4 +1,4 @@
-Hej jag funkar inte ännu, 
+Hej jag funkar inte ännu
 
 <?php
 header('Access-Control-Allow-Origin: *');
@@ -12,7 +12,7 @@ $db = $database->connect();
 
 $betOptions = new BetOptions($db);
 
-$matches = $betOptions->view();
+$matches = $betOptions->read();
 
 $num = $matches->rowCount();
 

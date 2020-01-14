@@ -12,7 +12,7 @@
             $this->conn = $db;
         }
 
-        public function view(){
+        public function read(){
             $query = ('SELECT MatchID, MatchName, MatchDate, Status FROM' . $this->table);
 
             $stmt = $this->conn->prepare($query);
