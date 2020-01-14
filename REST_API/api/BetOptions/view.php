@@ -1,4 +1,4 @@
-Hej jag funkar inte ännu
+Hej jag funkar inte ännu, 
 
 <?php
 header('Access-Control-Allow-Origin: *');
