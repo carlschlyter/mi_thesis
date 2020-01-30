@@ -6,14 +6,13 @@
         public $matchid;
         public $matchname;
         public $matchdate;
-        public $status;
 
         public function __construct($db){
             $this->conn = $db;
         }
 
         public function read(){
-            $query = ('SELECT MatchID, MatchName, MatchDate, Status FROM' . $this->table);
+            $query = 'SELECT MatchID, MatchName, MatchDate FROM' . $this->table . 'ORDER BY MatchDate DESC';
 
             $stmt = $this->conn->prepare($query);
 
@@ -21,7 +20,6 @@
 
             return $stmt;
         }
-
     }
 
     ?>

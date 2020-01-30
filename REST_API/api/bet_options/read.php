@@ -1,4 +1,4 @@
-Hej jag funkar inte ännu
+Hej jag funkar inte ännu tyvärr
 
 <?php
 header('Access-Control-Allow-Origin: *');
@@ -19,21 +19,18 @@ $num = $matches->rowCount();
 if($num > 0) {
     $betOptions_arr = array();
     $betOptions_arr['data'] = array();
-
     while($row = $matches->fetch(PDO::FETCH_ASSOC)){
         extract($row);
 
         $betOption_item = array(
             'MatchID' => $matchid,
             'MatchName' => $matchname,
-            'MatchDate' => $matchdate,
-            'Status' => $status
+            'MatchDate' => $matchdate
         );
 
-        array_push($betOptions_arr['data'], $betOption_item);
-        
+        array_push($betOptions_arr['data'], $betOption_item);        
     }
-
+    
     //Turn to JSON and ouput
     echo json_encode($betOptions_arr);
 
