@@ -1,5 +1,5 @@
 <?php
-    class Post {
+    class Game {
         private $conn;
         private $table = 'Matches';
 
@@ -10,14 +10,14 @@
             $this->conn = $db;
         }
 
-        public function Read(){
+        public function read(){
             $query = 'SELECT MatchID, MatchName FROM' . $this->table;
 
             $stmt = $this->conn->prepare($query);
 
             $stmt->execute();
 
-            return $stmt;
+            return $stmt;            
         }
     }
 ?>
