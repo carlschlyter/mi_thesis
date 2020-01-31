@@ -1,18 +1,17 @@
 <?php
-    class BetOptions{
+    class Post {
         private $conn;
         private $table = 'Matches';
 
         public $matchid;
         public $matchname;
-        public $matchdate;
-
-        public function __construct($db){
+        
+        public function __construct($db) {
             $this->conn = $db;
         }
 
-        public function read(){
-            $query = 'SELECT MatchID, MatchName, MatchDate FROM' . $this->table . 'ORDER BY MatchDate DESC';
+        public function Read(){
+            $query = 'SELECT MatchID, MatchName FROM' . $this->table;
 
             $stmt = $this->conn->prepare($query);
 
@@ -21,5 +20,3 @@
             return $stmt;
         }
     }
-
-    ?>
