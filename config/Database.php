@@ -1,7 +1,7 @@
 <?php  
     class Database {
         private $host = 'localhost';
-        private $db_name = 'praktik_projektet';
+        private $db_name = 'Examensarbete';
         private $username = 'root';
         private $password = 'root';
         private $conn;
