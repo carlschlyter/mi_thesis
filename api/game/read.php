@@ -2,6 +2,13 @@
 header('Access-Control-Allow-Origin: *');
 header('Content-Type: application/json');
 
+ 
+//FELHANTERING FRÅN ANDERS
+ini_set('display_errors',1);
+ini_set('display_startup_errors',1);
+error_reporting(-1);
+date_default_timezone_set('Europe/Stockholm');
+
 include_once '../../config/Database.php';
 include_once '../../models/Game.php';
 
@@ -23,8 +30,8 @@ if($num > 0){
         extract($row);
 
         $game_item = array(
-            'MatchID' => $matchid,
-            'MatchName' => $matchname
+            'MatchID' => $MatchID,
+            'MatchName' => $MatchName
         );
 
         array_push($games_arr['data'], $game_item);
