@@ -12,7 +12,7 @@
         }
 
         public function read(){
-            $query = 'SELECT MatchID, MatchName FROM ' . $this->table;
+            $query = 'SELECT MatchID, MatchName, MatchDate, Status FROM ' . $this->table . ' WHERE Status = "kommande" ORDER BY MatchDate';
 
             $stmt = $this->conn->prepare($query);
 
