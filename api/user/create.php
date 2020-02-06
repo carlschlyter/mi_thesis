@@ -12,32 +12,34 @@ header('Access-Control-Allow-Headers: Access-Control-Allow-Headers, Content-Type
 // date_default_timezone_set('Europe/Stockholm');
 
 include_once '../../config/Database.php';
-include_once '../../models/Game.php';
+include_once '../../models/User.php';
 
 $database = new Database();
 
 $db = $database->connect();
 
-$game = new Game($db);
+$user = new User($db);
 
 //GET THE RAW POSTED DATA
 $data = json_decode(file_get_contents("php://input"));
 
-// $game->MatchID = $data->MatchID;
-$game->MatchName = $data->MatchName;
-$game->GoalsHome = $data->GoalsHome;
-$game->GoalsAway = $data->GoalsAway;
-$game->WinningTeam = $data->WinningTeam;
-$game->MatchDate = $data->MatchDate;
-$game->Status = $data->Status;
+// $user->UserID = $data->UserID;
+$user->FirstName = $data->FirstName;
+$user->LastName = $data->LastName;
+$user->Email = $data->Email;
+$user->UserName = $data->UserName;
+$user->PassWord = $data->PassWord;
+$user->City = $data->City;
 
-//CREATE GAME
-if($game->create()) {
+//CREATE USER
+if($user->create()) {
     echo json_encode(
-        array('message' => 'Game Created')
+        array('message' => 'User Created')
     );
 } else {
     echo json_encode(
-        array('message' => 'Game Not Created')
+        array('message' => 'User Not Created')
     ); 
 }
+
+?>
