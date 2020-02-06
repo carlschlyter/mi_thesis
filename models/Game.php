@@ -31,7 +31,7 @@
         public function create(){
             $query = 'INSERT INTO ' . $this->table . ' 
             SET
-                MatchID = :MatchID,
+                MatchID = UUID(),
                 MatchName = :MatchName,
                 GoalsHome = :GoalsHome,
                 GoalsAway = :GoalsAway,
@@ -42,7 +42,7 @@
                 $stmt = $this->conn->prepare($query);
 
                 //CLEAN DATA
-                $this->MatchID = htmlspecialchars(strip_tags($this->MatchID));
+                // $this->MatchID = htmlspecialchars(strip_tags($this->MatchID));
                 $this->MatchName = htmlspecialchars(strip_tags($this->MatchName));
                 $this->GoalHome = htmlspecialchars(strip_tags($this->GoalsHome));
                 $this->GoalsAway = htmlspecialchars(strip_tags($this->GoalsAway));
@@ -51,7 +51,7 @@
                 $this->Status = htmlspecialchars(strip_tags($this->Status));
     
                 //BIND DATA
-                $stmt->bindParam(':MatchID', $this->MatchID);
+                // $stmt->bindParam(':MatchID', $this->MatchID);
                 $stmt->bindParam(':MatchName', $this->MatchName);
                 $stmt->bindParam(':GoalsHome', $this->GoalsHome);
                 $stmt->bindParam(':GoalsAway', $this->GoalsAway);
