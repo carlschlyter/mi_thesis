@@ -10,7 +10,6 @@
         public $UserName;
         public $PassWord;
         public $City;
-
         
         public function __construct($db) {
             $this->conn = $db;
@@ -47,7 +46,7 @@
                 $this->LastName = htmlspecialchars(strip_tags($this->LastName));
                 $this->Email = htmlspecialchars(strip_tags($this->Email));
                 $this->UserName = htmlspecialchars(strip_tags($this->UserName));
-                $this->PassWord = htmlspecialchars(strip_tags($this->PassWord));
+                $this->PassWord = password_hash($this->PassWord, PASSWORD_DEFAULT);
                 $this->City = htmlspecialchars(strip_tags($this->City));
     
                 //BIND DATA
