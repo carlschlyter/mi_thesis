@@ -12,7 +12,7 @@
 
         //READ TESTS
         public function read(){
-            $query = 'SELECT TestID, TestName FROM ' . $this->table . 'ORDER BY TestName';
+            $query = 'SELECT TestID, TestName FROM ' . $this->table . ' ORDER BY TestID';
 
             $stmt = $this->conn->prepare($query);
 
