@@ -1,4 +1,5 @@
 <?php
+
     class Test {
         private $conn;
         private $table = 'Test';
@@ -46,8 +47,8 @@
                 //PRINT ERROR IF SMTHNG GOES WRONG
                 printf("Error: %s.\n", $stmt->error);
                 return false;
+
             }
     }
-
 
 ?>
