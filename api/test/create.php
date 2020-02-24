@@ -1,9 +1,18 @@
 <?php
-header('Access-Control-Allow-Origin: *');
+header('Access-Control-Allow-Origin: http://localhost:3000');
 header('Content-Type: application/json');
+
+// header('Content-Type:application/x-www-form-urlencoded');
+// header('Content-Type: multipart/form-data');
+// header('Content-Type: text/plain');
+// header('Access-Control-Request-Method: POST');
+// header('Access-Control-Request-Headers: Content-Type, Accept');
+// header('Origin: http://localhost:3000');
+
 header('Access-Control-Allow-Methods: POST');
-header('Access-Control-Allow-Headers: *');
-// header('Access-Control-Allow-Headers: Access-Control-Allow-Headers, Content-Type, Access-Control-Allow-Methods, Authorization, X-Requested-With');
+// header('Access-Control-Allow-Headers: *');
+header('Access-Control-Allow-Headers: Access-Control-Allow-Headers, Content-Type, Access-Control-Allow-Methods, Authorization, X-Requested-With, Origin, Cache-Control, Pragma, Accept, Accept-Encoding');
+
 
  
 // //FELHANTERING FRÅN ANDERS
@@ -27,7 +36,7 @@ $data = json_decode(file_get_contents("php://input"));
 $test->TestID = $data->TestID;
 $test->TestName = $data->TestName;
 
-//CREATE GAME
+//CREATE TEST
 if($test->create()) {
     echo json_encode(
         array('message' => 'Test Created')
