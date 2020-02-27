@@ -5,14 +5,15 @@ header('Content-Type: application/json');
 // header('Content-Type:application/x-www-form-urlencoded');
 // header('Content-Type: multipart/form-data');
 // header('Content-Type: text/plain');
-// header('Access-Control-Request-Method: POST');
-// header('Access-Control-Request-Headers: Content-Type, Accept');
+header('Access-Control-Request-Method: POST');
+header('Access-Control-Request-Headers: Content-Type, X-PINGOTHER');
 // header('Origin: http://localhost:3000');
+// header('Accept: text/plain');
 
-header('Access-Control-Allow-Methods: POST');
+// header('Access-Control-Allow-Methods: POST, GET, OPTIONS');
 // header('Access-Control-Allow-Headers: *');
-header('Access-Control-Allow-Headers: Access-Control-Allow-Headers, Content-Type, Access-Control-Allow-Methods, Authorization, X-Requested-With, Origin, Cache-Control, Pragma, Accept, Accept-Encoding');
-
+// header('Access-Control-Allow-Headers: Access-Control-Allow-Headers, Content-Type, Access-Control-Allow-Methods, Authorization, X-Requested-With, Origin, Cache-Control, Pragma, Accept, Accept-Encoding');
+// header('Access-Control-Allow-Credentials: "true"');
 
  
 // //FELHANTERING FRÅN ANDERS
