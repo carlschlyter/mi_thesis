@@ -5,11 +5,11 @@ header('Access-Control-Allow-Methods: POST');
 header('Access-Control-Allow-Headers: Access-Control-Allow-Headers, Content-Type, Access-Control-Allow-Methods, AUthorization, X-Requested-With');
 
  
-// //FELHANTERING FRÅN ANDERS
-// ini_set('display_errors',1);
-// ini_set('display_startup_errors',1);
-// error_reporting(-1);
-// date_default_timezone_set('Europe/Stockholm');
+//FELHANTERING FRÅN ANDERS
+ini_set('display_errors',1);
+ini_set('display_startup_errors',1);
+error_reporting(-1);
+date_default_timezone_set('Europe/Stockholm');
 
 include_once '../../config/Database.php';
 include_once '../../models/User.php';
