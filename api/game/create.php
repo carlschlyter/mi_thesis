@@ -23,13 +23,13 @@ $game = new Game($db);
 //GET THE RAW POSTED DATA
 $data = json_decode(file_get_contents("php://input"));
 
-$game->MatchID = $data->MatchID;
+// $game->MatchID = $data->MatchID;
 $game->MatchName = $data->MatchName;
-$game->GoalsHome = $data->GoalsHome;
-$game->GoalsAway = $data->GoalsAway;
-$game->WinningTeam = $data->WinningTeam;
-$game->MatchDate = $data->MatchDate;
-$game->Status = $data->Status;
+// $game->GoalsHome = $data->GoalsHome;
+// $game->GoalsAway = $data->GoalsAway;
+// $game->WinningTeam = $data->WinningTeam;
+// $game->MatchDate = $data->MatchDate;
+// $game->Status = $data->Status;
 
 //CREATE GAME
 if($game->create()) {

@@ -26,6 +26,17 @@
             return $stmt;            
         }
 
+        //AUTHENTICATE USERS
+        public function authenticate(){
+            $query = 'SELECT UserName, PassWord FROM ' . $this->table . ' WHERE UserName <> " " ORDER BY UserName';
+
+            $stmt = $this->conn->prepare($query);
+
+            $stmt->execute();
+
+            return $stmt;            
+        }
+
         //CREATE USER
         public function create(){
             $query = 'INSERT INTO ' . $this->table . ' 

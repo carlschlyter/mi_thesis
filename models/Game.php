@@ -32,32 +32,32 @@
             $query = 'INSERT INTO ' . $this->table . ' 
             SET
                 MatchID = UUID(),
-                MatchName = :MatchName,
-                GoalsHome = :GoalsHome,
-                GoalsAway = :GoalsAway,
-                WinningTeam = :WinningTeam,
-                MatchDate = :MatchDate,
-                Status = :Status';
+                MatchName = :MatchName';
+                // GoalsHome = :GoalsHome,
+                // GoalsAway = :GoalsAway,
+                // WinningTeam = :WinningTeam,
+                // MatchDate = :MatchDate,
+                // Status = :Status';
 
                 $stmt = $this->conn->prepare($query);
 
                 //CLEAN DATA
                 // $this->MatchID = htmlspecialchars(strip_tags($this->MatchID));
                 $this->MatchName = htmlspecialchars(strip_tags($this->MatchName));
-                $this->GoalHome = htmlspecialchars(strip_tags($this->GoalsHome));
-                $this->GoalsAway = htmlspecialchars(strip_tags($this->GoalsAway));
-                $this->WinningTeam = htmlspecialchars(strip_tags($this->WinningTeam));
-                $this->MatchDate = htmlspecialchars(strip_tags($this->MatchDate));
-                $this->Status = htmlspecialchars(strip_tags($this->Status));
+                // $this->GoalHome = htmlspecialchars(strip_tags($this->GoalsHome));
+                // $this->GoalsAway = htmlspecialchars(strip_tags($this->GoalsAway));
+                // $this->WinningTeam = htmlspecialchars(strip_tags($this->WinningTeam));
+                // $this->MatchDate = htmlspecialchars(strip_tags($this->MatchDate));
+                // $this->Status = htmlspecialchars(strip_tags($this->Status));
     
                 //BIND DATA
                 // $stmt->bindParam(':MatchID', $this->MatchID);
                 $stmt->bindParam(':MatchName', $this->MatchName);
-                $stmt->bindParam(':GoalsHome', $this->GoalsHome);
-                $stmt->bindParam(':GoalsAway', $this->GoalsAway);
-                $stmt->bindParam(':WinningTeam', $this->WinningTeam);
-                $stmt->bindParam(':MatchDate', $this->MatchDate);
-                $stmt->bindParam(':Status', $this->Status);
+                // $stmt->bindParam(':GoalsHome', $this->GoalsHome);
+                // $stmt->bindParam(':GoalsAway', $this->GoalsAway);
+                // $stmt->bindParam(':WinningTeam', $this->WinningTeam);
+                // $stmt->bindParam(':MatchDate', $this->MatchDate);
+                // $stmt->bindParam(':Status', $this->Status);
     
                 //EXECUTE QUERY
                 if($stmt->execute()){
