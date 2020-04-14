@@ -24,9 +24,9 @@ $bet = new Bet($db);
 //GET THE RAW POSTED DATA
 $data = json_decode(file_get_contents("php://input"));
 
-$bet->BetterID = $data->BetterID;
-$bet->MatchID = $data->MatchID;
-$bet->GoalsHomeBet = $datGoalsHomeBet;
+// $bet->BetterID = $data->BetterID;
+// $bet->MatchID = $data->MatchID;
+$bet->GoalsHomeBet = $data->GoalsHomeBet;
 $bet->GoalsAwayBet = $data->GoalsAwayBet;
 $bet->WinningTeamBet = $data->WinningTeamBet;
 $bet->LiveBetPoints = $data->LiveBetPoints;
