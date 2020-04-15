@@ -24,14 +24,16 @@ $bet = new Bet($db);
 //GET THE RAW POSTED DATA
 $data = json_decode(file_get_contents("php://input"));
 
+$bet->BetterNick = $data->BetterNick;
+$bet->MatchName = $data->MatchName;
 // $bet->BetterID = $data->BetterID;
 // $bet->MatchID = $data->MatchID;
 $bet->GoalsHomeBet = $data->GoalsHomeBet;
 $bet->GoalsAwayBet = $data->GoalsAwayBet;
 $bet->WinningTeamBet = $data->WinningTeamBet;
-$bet->LiveBetPoints = $data->LiveBetPoints;
-$bet->LiveBetPointsWinning = $data->LiveBetPointsWinning;
-$bet->LiveBetPointsTotal = $data->LiveBetPointsTotal;
+// $bet->LiveBetPoints = $data->LiveBetPoints;
+// $bet->LiveBetPointsWinning = $data->LiveBetPointsWinning;
+// $bet->LiveBetPointsTotal = $data->LiveBetPointsTotal;
 
 //CREATE BET
 if($bet->create()) {

@@ -45,8 +45,8 @@
                 $query = 'INSERT INTO ' . $this->table_bets . ' 
                 SET
                     BetID = UUID(),
-                    BetterID = (SELECT BetterID FROM Betters WHERE BetterNick = "Bubba"), 
-                    MatchID = (SELECT MatchID FROM Matches WHERE MatchName = "Nigeria-Madagascar"),
+                    BetterID = (SELECT BetterID FROM Betters WHERE BetterNick = :BetterNick LIMIT 1), 
+                    MatchID = (SELECT MatchID FROM Matches WHERE MatchName = :MatchName),
                     GoalsHomeBet = :GoalsHomeBet,
                     GoalsAwayBet = :GoalsAwayBet,
                     WinningTeamBet = :WinningTeamBet,
@@ -60,15 +60,15 @@
                 $stmt = $this->conn->prepare($query);
 
                 //CLEAN DATA
-                // $this->BetterNick = htmlspecialchars(strip_tags($this->BetterNick));
-                // $this->MatchName = htmlspecialchars(strip_tags($this->MatchName));
+                $this->BetterNick = htmlspecialchars(strip_tags($this->BetterNick));
+                $this->MatchName = htmlspecialchars(strip_tags($this->MatchName));
                 $this->GoalsHomeBet = htmlspecialchars(strip_tags($this->GoalsHomeBet));
                 $this->GoalsAwayBet = htmlspecialchars(strip_tags($this->GoalsAwayBet));
                 $this->WinningTeamBet = htmlspecialchars(strip_tags($this->WinningTeamBet));
 
                 //BIND DATA
-                // $stmt->bindParam(':BetterNick', $this->BetterNick);
-                // $stmt->bindParam(':MatchName', $this->MatchName);
+                $stmt->bindParam(':BetterNick', $this->BetterNick);
+                $stmt->bindParam(':MatchName', $this->MatchName);
                 $stmt->bindParam(':GoalsHomeBet', $this->GoalsHomeBet);
                 $stmt->bindParam(':GoalsAwayBet', $this->GoalsAwayBet);
                 $stmt->bindParam(':WinningTeamBet', $this->WinningTeamBet);

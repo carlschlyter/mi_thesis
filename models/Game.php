@@ -18,7 +18,7 @@
 
         //READ GAMES
         public function read(){
-            $query = 'SELECT MatchID, MatchName, MatchDate, Status FROM ' . $this->table . ' WHERE Status = "kommande" ORDER BY MatchDate';
+            $query = 'SELECT MatchID, MatchName, MatchDate, Status FROM ' . $this->table . ' WHERE Status = "kommande" AND MatchDate > curdate() ORDER BY MatchDate';
 
             $stmt = $this->conn->prepare($query);
 
